@@ -38,3 +38,4 @@ April 16, 2026, Thursday - 1:11am | Angel Number motivation! :D
 April 16, 2026, Thursday - 4:44am | The Angel Number strikes again!
 - I finally did it, i completed the code ToT
 - after rechecking with the requirements, my code has succesfully followed the requirements to a T.
+- Will add the flowchart and upload the code soon.
