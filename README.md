@@ -23,3 +23,18 @@ April 15, 2026, Wednesday -  9:31am | Holy crap, im taking a break for an hour.
 April 15, 2026, Wednesday - 11:57am | Break over!
 - That break took longer than i thought T_T
 - Will start making the user's menu and fixing up the methods' logic.
+
+April 16, 2026, Thursday - 1:11am | Angel Number motivation! :D
+- I've been hard at work on this shopping cart activity all day, im very tired, but i'll get this done!
+- I've officially added the logic for the actual shopping cart.
+- Once the user buys something, the stock will be updated.
+- Error messages will pop up once the user types an invalid number.
+- Added comments around the code so the code's explanations are clear.
+- Menu now officially works.
+
+- Will add the while loop logic for the user.
+- Will add the total price logic and the discount logic.
+
+April 16, 2026, Thursday - 4:44am | The Angel Number strikes again!
+- I finally did it, i completed the code ToT
+- after rechecking with the requirements, my code has succesfully followed the requirements to a T.
