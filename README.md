@@ -19,3 +19,7 @@ April 15, 2026, Wednesday -  9:31am | Holy crap, im taking a break for an hour.
 - I've made the products class and am now currently trying to build the logic for displaying the items/products and the switch case / looping menu.
 - Taking an hour break. I've made good progress though ^^
 - Current progress has now been uploaded, Will continue to keep working after the break.
+
+April 15, 2026, Wednesday - 11:57am | Break over!
+- That break took longer than i thought T_T
+- Will start making the user's menu and fixing up the methods' logic.
