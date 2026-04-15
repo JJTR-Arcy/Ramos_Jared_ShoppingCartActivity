@@ -1,6 +1,12 @@
 # Ramos_Jared_ShoppingCartActivity
 Hello! This activity is done by Jared James T. Ramos, a BSIT 2-1 Irregular student, with the help of Gemini AI acting as a tutor and guide to my progress in this project! I hope this project will be of use to anyone &lt;3
 
+This activity/program includes features such as:
+- Letting the user pick the desired product that they want to buy
+- While loops that lets the user break out of
+- Discounts when the total price reaches 5k
+- uses classes and objects.
+
 DISCLAIMER - I explicitly told Gemini AI to guide me through my questions instead of giving me the code immediately, that way, I would understand rather than going through the easy way. 
 
 April 14, 2026, Tuesday - 2:07pm | Officially starting the project!
