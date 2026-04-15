@@ -14,3 +14,8 @@ April 15, 2026, Wednesday - 5:51am | Finished studying - The IDE finally has stu
 - I will be writing the code right now, as i finally have all the knowledge necessary to start building.
 - Once I've done a good amount of progress on the code, i'll officially start the flow chart.
 - I can do this!
+
+April 15, 2026, Wednesday -  9:31am | Holy crap, im taking a break for an hour.
+- I've made the products class and am now currently trying to build the logic for displaying the items/products and the switch case / looping menu.
+- Taking an hour break. I've made good progress though ^^
+- Current progress has now been uploaded, Will continue to keep working after the break.
