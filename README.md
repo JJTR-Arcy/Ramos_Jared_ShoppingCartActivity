@@ -39,3 +39,26 @@ April 16, 2026, Thursday - 4:44am | The Angel Number strikes again!
 - I finally did it, i completed the code ToT
 - after rechecking with the requirements, my code has succesfully followed the requirements to a T.
 - Will add the flowchart and upload the code soon.
+
+April 16, 2026, Thursday - 5:49am | Finally done.
+- Added flow chart
+- Double checked completed code to the requirements
+- Added AI usage report.
+- Hopefully i pass <3 Goodnight.
+
+AI Usage Report: C# Shopping Cart 
+AI Tool Used: Gemini
+Primary Use Case: Debugging Assistance, Syntax Troubleshooting, and Conceptual Reinforcement
+
+During the development of this shopping cart console application, I utilized AI strictly as an interactive debugger and "rubber duck" to help me talk through my logic. I wrote the core object-oriented structures, the mathematical formulas, and the foundational game-loop myself.
+
+I consulted the AI for guidance on the following specific roadblocks:
+
+Array Indexing Logic: I used the AI to help me conceptualize why my user input ID needed a - 1 offset to correctly match the 0-indexed shopMenu array.
+
+Volatile Memory & Object Updates: I asked the AI for clarification on how C# handles RAM versus persistent storage to ensure I was updating the remainingStock of my Product class correctly without accidentally creating new objects.
+
+Loop Control & Scope: I used the AI to troubleshoot an infinite loop trap I accidentally created, which helped me understand exactly where to place my break; condition and checkout math outside of the while (true) loop.
+
+Conclusion:
+The AI did not write the final implementation or the logic for this project. Instead, it guided me toward the source of my syntax errors and logic traps, allowing me to manually fix the code, test it, and deepen my actual understanding of C# mechanics.
