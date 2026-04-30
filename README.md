@@ -19,3 +19,7 @@ April 29, Wednesday - 10am | Pull Requests?? Branches??
 
 April 29, Wednesday - 11:42pm | Repairing the first part of the activity
 - My hands are on the keyboard! I will repair and rebuild the entirety of pt 1 with the comments and criticisms in mind! >:]
+
+May 1, 12:39am | Part 1 is nearly done!
+- Part one is nearly done!
+- Added the array logic and the DisplayProducts Logic
