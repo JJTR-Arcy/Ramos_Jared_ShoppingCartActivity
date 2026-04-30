@@ -38,6 +38,15 @@ namespace Ramos_Jared_ShoppingCartActivity
                         // this is where all of the user input goes!
 
                     case "3";
+                    Console.WriteLine("Will that be all that you want? (Y/N): ");
+                    string checkoutDecision = Console.ReadLine().Lower;
+
+                    if (checkoutDecision == "y")
+                        // Continue to checkout
+
+                    else if (checkoutDecision == "n")
+                        // Loop back into the menu
+
             }
 
         }
