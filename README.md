@@ -23,3 +23,10 @@ April 29, Wednesday - 11:42pm | Repairing the first part of the activity
 May 1, 12:39am | Part 1 is nearly done!
 - Part one is nearly done!
 - Added the array logic and the DisplayProducts Logic
+
+May 1, 10:34am | Part 1 is finally done! IMMEDIATELY starting part 2 NOW.
+- Hays, time management and ADHD struck again, but that doesnt mean that i wont get this project done.
+- Officially completed Part 1
+- Applied comments and criticisms
+- Officially fixed errors
+- IMMEDIATELY started part 2 ASAP
