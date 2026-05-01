@@ -30,3 +30,7 @@ May 1, 10:34am | Part 1 is finally done! IMMEDIATELY starting part 2 NOW.
 - Applied comments and criticisms
 - Officially fixed errors
 - IMMEDIATELY started part 2 ASAP
+
+May 1, 11:08am | Part 2 progress is going smoothly.
+- Added cart menu, history, and exit
+- working on adding the search and filtering of products ASAP.
