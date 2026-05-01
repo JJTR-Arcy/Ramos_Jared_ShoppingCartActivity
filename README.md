@@ -68,3 +68,5 @@ Loop Control & Scope: I used the AI to troubleshoot an infinite loop trap I acci
 
 Conclusion:
 The AI did not write the final implementation or the logic for this project. Instead, it guided me toward the source of my syntax errors and logic traps, allowing me to manually fix the code, test it, and deepen my actual understanding of C# mechanics.
+
+(Accidentally uploaded the Part 2 file here, my bad, will delete it now. Writing here for commit history purposes :P)
