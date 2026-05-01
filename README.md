@@ -34,3 +34,8 @@ May 1, 10:34am | Part 1 is finally done! IMMEDIATELY starting part 2 NOW.
 May 1, 11:08am | Part 2 progress is going smoothly.
 - Added cart menu, history, and exit
 - working on adding the search and filtering of products ASAP.
+
+May 1, 11:28am | Part 2 progress is still going smoothly, like wow.
+- Added the search and filtering or products.
+- IMMEDIATELY Working on removing and updating items from the cart.
+- my hands are shaking, why did i do this to myself ToT
