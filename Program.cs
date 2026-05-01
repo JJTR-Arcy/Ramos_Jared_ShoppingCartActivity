@@ -1,249 +1,194 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Xml.Schema;
+﻿using System;
+using System.Security.Cryptography.X509Certificates;
 
-namespace Sanbox_for_Shopping_Cart_Activity_Parts_1_and_2
+namespace Ramos_Jared_ShoppingCartActivity
 {
-    internal class Program
-    {
-        // Hello :3 This is Jared Ramos from BSIT 1-2 (irreg) here. I've decided to completely nuke my old code and rework it with the receieved comments and criticisms in mind, hopefully I've done a good job :)
-        // Side note: Very very sorry that I submitted my repository's link inside of 1-1's google sheet! Complete accident T_T 
-        // By the time that I had realized, the google sheet was already locked! Completely my fault, it wont happen again <3
-        static void Main(string[] args)
-        {
-            Product[] storeInventory = new Product[5];
-            CartItem[] shoppingCart = new CartItem[5];
-            int cartItemCount = 0;
-
-            storeInventory[0] = new Product();
-            storeInventory[0].id = 1;
-            storeInventory[0].name = "Instant Noodles";
-            storeInventory[0].price = 15.50;
-            storeInventory[0].remainingStock = 100;
-
-            storeInventory[1] = new Product();
-            storeInventory[1].id = 2;
-            storeInventory[1].name = "Safeguard White Soap";
-            storeInventory[1].price = 50;
-            storeInventory[1].remainingStock = 120;
-
-            storeInventory[2] = new Product();
-            storeInventory[2].id = 3;
-            storeInventory[2].name = "Canned Corned Beef";
-            storeInventory[2].price = 60;
-            storeInventory[2].remainingStock = 70;
-
-            storeInventory[3] = new Product();
-            storeInventory[3].id = 4;
-            storeInventory[3].name = "Cotton Balls";
-            storeInventory[3].price = 80;
-            storeInventory[3].remainingStock = 90;
-
-            storeInventory[4] = new Product();
-            storeInventory[4].id = 5;
-            storeInventory[4].name = "Face Cleanser";
-            storeInventory[4].price = 120;
-            storeInventory[4].remainingStock = 60;
-
-            
-
-            bool menuActivated = true;
-            while (menuActivated == true)
-            {
-
-                Console.WriteLine("Welcome to the JJTR Shop!");
-                Console.WriteLine("What would you like to do today? Please Select a number.");
-                Console.WriteLine("1 - View and Purchase items currently in stock");
-                Console.WriteLine("2 - Checkout & Exit");
-                Console.WriteLine("The stage is yours, dear customer! What do you pick?: ");
-                string userChoice = Console.ReadLine();
-                
-
-                switch (userChoice)
-                {
-                    case "1":
-                        Console.WriteLine("Welcome!");
-                        Console.WriteLine("------------------!");
-                        for (int i = 0; i < storeInventory.Length; i++)
-                        {
-                            storeInventory[i].DisplayProduct();
-                        }
-                        Console.WriteLine("\nWhich item number would you like to buy? (Enter the ID): ");
-                        string idInput = Console.ReadLine();
-
-
-                        if (int.TryParse(idInput, out int selectedId))
-                        {
-                          
-                            int arrayIndex = selectedId - 1;
-
-                            
-                            if (arrayIndex >= 0 && arrayIndex < storeInventory.Length)
-                            {
-                                
-                                Console.WriteLine($"You selected ID: {selectedId}, {storeInventory[arrayIndex].name}");
-                                Console.WriteLine("Excellent choice! How many would you like to buy?");
-                                string quantityInput = Console.ReadLine();
-
-                                if (int.TryParse(quantityInput, out int quantity))
-                                {
-                                    if (quantity <= 0 || quantity > storeInventory[arrayIndex].remainingStock)
-                                    {
-                                        Console.WriteLine("ERROR: Quantity requested either too high or too low. Please reconsider");
-                                    }
-
-                                    else
-                                    {
-                                        storeInventory[arrayIndex].DeductStock(quantity);
-                                        Console.WriteLine($"Success! Added {quantity} of {storeInventory[arrayIndex].name} to your cart.");
-
-                                   
-                                        double itemTotal = storeInventory[arrayIndex].price * quantity;
-
-                                    
-                                        CartItem newItem = new CartItem();
-                                        newItem.name = storeInventory[arrayIndex].name;
-                                        newItem.price = storeInventory[arrayIndex].price;
-                                        newItem.quantityBought = quantity;
-                                        newItem.subtotal = itemTotal;
-
-                                        bool itemFoundInCart = false;
-
-                                        for (int i = 0; i < cartItemCount; i++)
-                                        {
-                                            if (shoppingCart[i].name == newItem.name)
-                                            shoppingCart[i].quantityBought += quantity;
-                                            shoppingCart[i].subtotal += itemTotal;
-
-                                            Console.WriteLine($"\nSuccess! Updated {newItem.name} in your cart.");
-                                            Console.WriteLine($"New Quantity: {shoppingCart[i].quantityBought} | New Subtotal: Php {shoppingCart[i].subtotal}");
-
-                                            itemFoundInCart = true;
-                                            break;
-                                        }
-
-                                        if (itemFoundInCart == false)
-                                        {
-                                            if (cartItemCount < shoppingCart.Length)
-                                            {
-                                                shoppingCart[cartItemCount] = newItem;
-                                                cartItemCount++;
-                                                Console.WriteLine($"\nSuccess! Added {quantity}x {newItem.name} to your cart. Subtotal: Php {newItem.subtotal}");
-                                            }
-
-                                            else
-                                            {
-                                                Console.WriteLine("\nERROR: Your shopping cart is completely full!");
-                                            }
-                                        }
-
-                                        Console.WriteLine($"\nSuccess! {quantity}x {newItem.name} added. Subtotal: Php {newItem.subtotal}");
-                                    }
-                                }
-
-                                else
-                                {
-                                    Console.WriteLine("Invalid input! Please enter a real number for the quantity.");
-                                }
-                            }
-                              
-                            
-                            else if (arrayIndex <= 0 ||  arrayIndex >= storeInventory.Length)
-                            {
-                                Console.WriteLine("Invalid ID! That item does not exist on our shelves.");
-                            }
-                        }
-                        else
-                        {
-                            Console.WriteLine("Invalid input! Please enter a real number.");
-                        }
-
-                        break;
-
-
-                    case "2":
-                        Console.WriteLine("\n========== OFFICIAL RECEIPT ==========");
-
-                        // 1. Check if they are trying to checkout with an empty cart
-                        if (cartItemCount == 0)
-                        {
-                            Console.WriteLine("Your cart is completely empty! Going back to the menu...");
-                            break;
-                        }
-
-                        double grandTotal = 0;
-
-                        // 2. Loop through the cart and print the items (Requirement 9)
-                        for (int i = 0; i < cartItemCount; i++)
-                        {
-                            Console.WriteLine($"{shoppingCart[i].quantityBought}x {shoppingCart[i].name} - Php {shoppingCart[i].subtotal}");
-                            grandTotal += shoppingCart[i].subtotal; // Accumulate the total
-                        }
-
-                        Console.WriteLine("--------------------------------------");
-                        Console.WriteLine($"GRAND TOTAL: Php {grandTotal}");
-
-                        // 3. The 10% Discount Check (Requirement 10 & 11)
-                        if (grandTotal >= 5000)
-                        {
-                            double discount = grandTotal * 0.10; // Calculate 10%
-                            double finalTotal = grandTotal - discount;
-
-                            Console.WriteLine($"\n*** 10% BIG SPENDER DISCOUNT APPLIED! ***");
-                            Console.WriteLine($"Discount Amount: -Php {discount}");
-                            Console.WriteLine($"FINAL TOTAL: Php {finalTotal}");
-                        }
-
-                        Console.WriteLine("======================================");
-
-                        // 4. Show updated remaining stock (Requirement 12)
-                        Console.WriteLine("\n[STORE INVENTORY AFTER CHECKOUT]");
-                        for (int i = 0; i < storeInventory.Length; i++)
-                        {
-                            Console.WriteLine($"{storeInventory[i].name} - Remaining Stock: {storeInventory[i].remainingStock}");
-                        }
-
-                        // 5. End the program safely
-                        Console.WriteLine("\nThank you for shopping at the JJTR Shop!");
-                        menuActivated = false; // This kills the while loop!
-                        break;
-                }
-            }
-
-
-         
-        }
-    }
-
-    // --- Classes Logic! --- 
 
     public class Product
-    {
+    {   // Product Fields
         public int id;
         public string name;
         public double price;
         public int remainingStock;
 
-        
-
-        public void DisplayProduct()
+        // Product Methods
+        public void DisplayProducts() // Logic to display all the items in a menu
         {
-            Console.WriteLine($"[{id}] {name} - Php {price} (Stock: {remainingStock})");
+
+
+            Console.WriteLine($"[ID: {id} ] Name: {name}, Price: {price}, Stock: {remainingStock}");
+            Console.WriteLine("------------------------");
+
         }
 
-        public void DeductStock(int amountToBuy)
+        public void DeductStock(int amountToSubtract)
         {
-            remainingStock -= amountToBuy;
+            remainingStock = (remainingStock - amountToSubtract);
         }
+
+
+
     }
-              
-        
-    
 
-    public class CartItem
+    internal class Program
     {
-        public string name;
-        public double price;
-        public int quantityBought;
-        public double subtotal;
+        static void Main(string[] args)
+        {
+            #region - Item Logic | Arrays of shopMenu - This region holds the arrays for all of the items and their respective data.
+            Product[] shopMenu = new Product[5];
+
+            shopMenu[0] = new Product();
+            shopMenu[0].id = 1;
+            shopMenu[0].name = "Safeguard Soap";
+            shopMenu[0].price = 65;
+            shopMenu[0].remainingStock = 30;
+
+            shopMenu[1] = new Product();
+            shopMenu[1].id = 2;
+            shopMenu[1].name = "Cheezy";
+            shopMenu[1].price = 46;
+            shopMenu[1].remainingStock = 40;
+
+            shopMenu[2] = new Product();
+            shopMenu[2].id = 3;
+            shopMenu[2].name = "Deodorant";
+            shopMenu[2].price = 100;
+            shopMenu[2].remainingStock = 100;
+
+            shopMenu[3] = new Product();
+            shopMenu[3].id = 4;
+            shopMenu[3].name = "Alcohol - 500mL";
+            shopMenu[3].price = 75;
+            shopMenu[3].remainingStock = 80;
+
+            shopMenu[4] = new Product();
+            shopMenu[4].id = 5;
+            shopMenu[4].name = "Ballpen Box - 12 pieces";
+            shopMenu[4].price = 110;
+            shopMenu[4].remainingStock = 90;
+            #endregion
+            #region - The Menu | Greetings, While loops, If statements, and Math
+            Console.WriteLine("Greetings! Welcome to the JJTR Shop! What would you like to buy today?");
+            Console.WriteLine("Please add what you want to buy in your shopping cart! ");
+            Console.WriteLine("Here are the current items for today!");
+            Console.WriteLine("");
+
+            for (int i = 0; i < 5; i++) // For loop that loops through the DisplayProducts method to show all the products!
+            {
+                shopMenu[i].DisplayProducts();
+            }
+
+            double cartTotal = 0; // The cash register!
+
+
+            while (true)
+            {
+
+
+                Console.WriteLine("Please type the ID of the item that you want to buy: ");
+                string userInput = Console.ReadLine();
+                // if the user types in anything else but a number, the loop will replay.
+
+
+                if (int.TryParse(userInput, out int productID))
+                { // userInput becomes productID
+
+                    if (productID > 0 && productID <= 5)
+                    {
+                        Console.WriteLine($"Excellent choice picking {shopMenu[productID - 1].name}" + "!");
+                        Console.WriteLine($"Now, Please pick how much of {shopMenu[productID - 1].name} you would like to buy: ");
+                        Console.WriteLine($"The current stock for {shopMenu[productID - 1].name} is: {shopMenu[productID - 1].remainingStock}");
+                        string userStock = Console.ReadLine();
+                        if (int.TryParse(userStock, out int buyAmount))
+                        {
+                            if (buyAmount > 0 && buyAmount <= shopMenu[productID - 1].remainingStock) // Checks if the user inputted a valid stock number
+                            {
+                                shopMenu[productID - 1].DeductStock(buyAmount);
+                                cartTotal = (cartTotal + shopMenu[productID - 1].price * buyAmount);
+                                Console.WriteLine($"Successfully put in the cart! Current stock of {shopMenu[productID - 1].name} is: {shopMenu[productID - 1].remainingStock}");
+
+                                if (shopMenu[productID - 1].remainingStock == 0)
+                                {
+                                    Console.WriteLine($"It seems we're now out of stock for {shopMenu[productID - 1].name}. Thank you for shopping with us! ^^");
+                                }
+
+                                else if (buyAmount <= 0)
+                                {
+                                     // Logic checker in case the user types a string or a negative number.
+                                     Console.WriteLine("Invalid input, Please Try again.");
+                                }
+
+
+                            }
+
+                                else
+                                {
+                                    // Logic checker in case the user types a number that is higher than the stock
+                                     Console.WriteLine("We're sorry, but we dont have enough for you!");
+                                }
+
+                        }
+                        else if (productID >= 6 || productID < 0) // Logic Checker for Invalid user input
+                        {
+                            Console.WriteLine("We apologise, but that product isnt available right now :( Please reconsider.");
+                        }
+                    }
+
+                    else // Logic Checker for invalid User Input
+                    {
+                        Console.WriteLine("Hey! That isnt a valid input, please try again! ");
+                    }
+
+                    Console.WriteLine("Would you like to finish up your shopping? (Y/N)");
+                    string userDecision = Console.ReadLine().ToLower();
+                    if (userDecision == "y")
+                    {
+                        break;
+                    }
+
+                    else if (userDecision != "n")
+                    {
+                        Console.WriteLine("Hey! Keep your answer within the choices.");
+                        Console.WriteLine("Would you like to finish up your shopping? (Y/N)");
+                        
+                       
+                    }
+
+
+            
+                }
+
+            }
+            #endregion
+            #region - Farewell | Discounts, Totals, and Goodbyes
+            double totalEnd = 0;
+            double discountedTotal = 0; // Set the discounted total payment as 0 for now so it can update later
+            if (cartTotal >= 5000)
+            {
+                discountedTotal = (cartTotal * 0.10); // 10% Discount if the user reaches 5000+ in total
+                totalEnd = (cartTotal - discountedTotal);
+                Console.WriteLine("------RECEIPT------");
+                Console.WriteLine($"Your grand total payment (discount included) is: {totalEnd}");
+            }
+
+            else if (cartTotal < 5000)
+            {
+                Console.WriteLine("------RECEIPT------");
+                Console.WriteLine($"Your grand total payment is: {cartTotal}");
+                
+            }
+            Console.WriteLine("");
+            Console.WriteLine("------UPDATED MENU------");
+            for (int i = 0; i < 5; i++) // For loop that loops through the DisplayProducts method to show all the products AFTER the user's purchase.
+            {
+                shopMenu[i].DisplayProducts();
+            }
+            Console.WriteLine("");
+            Console.WriteLine("Thank you for shopping with us, Please come back soon!");
+           
+            Console.ReadLine();
+            #endregion
+        }
+
     }
 }
