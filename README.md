@@ -1,72 +1,56 @@
-# Ramos_Jared_ShoppingCartActivity
-Hello! This activity is done by Jared James T. Ramos, a BSIT 2-1 Irregular student, with the help of Gemini AI acting as a tutor and guide to my progress in this project! I hope this project will be of use to anyone &lt;3
+# Ramos_Jared_ShoppingCartActivity_PT 2
+Hello! This is Part 2 of the previous activity! 
 
-This activity/program includes features such as:
-- Letting the user pick the desired product that they want to buy
-- While loops that lets the user break out of
-- Discounts when the total price reaches 5k
-- uses classes and objects.
+This activity/program includes changes from the last iteration such as:
+Searching for a product
+removal of items from the cart
+added history of purchases and receipt time and dates
+and etc.
 
-DISCLAIMER - I explicitly told Gemini AI to guide me through my questions instead of giving me the code immediately, that way, I would understand rather than going through the easy way. 
+DISCLAIMER - I explicitly told Gemini AI to guide me through my questions instead of giving me the code immediately, that way, I would understand rather than going through the easy way. Basically, i treat it as a teacher i fall back on whenever i absolutely do not know what to do.
 
-April 14, 2026, Tuesday - 2:07pm | Officially starting the project!
+April 28, Tuesday - 10pm | Finally starting it!
+- I know that the editing history of this READ.ME File says otherwise, but this is when i officially started Part 2!
+- Completely deleted and nuked the previous iteration of the code
+- Will start anew with the comments and criticisms in mind
+- Lets do this! <3
 
-- Albeit late, I am finally starting the project! Due to other commitments such as other subjects, games, and my choir, I've only gotten to start the project now T_T. I'll admit, this will be a challenging project, but i'll have fun nonetheless <3 Right now, im currently studying how exactly classes and objects works through the use of Bro Code's 4 hour C# Tutorial video and the help of Gemini's explanations. 
+April 29, Wednesday - 10am | Pull Requests?? Branches??
+- Spent a long time trying to figure out GitHub...
+- Also spent a long time trying to figure out how exaclty Visual Studio and GitHub is supposed to connect..
+- Thankfully Gemini was there and now i understand them and i have connected them <3
+- Will start writing code after my class <3
 
+April 29, Wednesday - 11:42pm | Repairing the first part of the activity
+- My hands are on the keyboard! I will repair and rebuild the entirety of pt 1 with the comments and criticisms in mind! >:]
 
-April 15, 2026, Wednesday - 5:51am | Finished studying - The IDE finally has stuff in :P
+May 1, 12:39am | Part 1 is nearly done!
+- Part one is nearly done!
+- Added the array logic and the DisplayProducts Logic
 
-- Oh dear, all my other commitments got in the way T_T But I can still do this!
-- I will be writing the code right now, as i finally have all the knowledge necessary to start building.
-- Once I've done a good amount of progress on the code, i'll officially start the flow chart.
-- I can do this!
+May 1, 10:34am | Part 1 is finally done! IMMEDIATELY starting part 2 NOW.
+- Hays, time management and ADHD struck again, but that doesnt mean that i wont get this project done.
+- Officially completed Part 1
+- Applied comments and criticisms
+- Officially fixed errors
+- IMMEDIATELY started part 2 ASAP
 
-April 15, 2026, Wednesday -  9:31am | Holy crap, im taking a break for an hour.
-- I've made the products class and am now currently trying to build the logic for displaying the items/products and the switch case / looping menu.
-- Taking an hour break. I've made good progress though ^^
-- Current progress has now been uploaded, Will continue to keep working after the break.
+May 1, 11:08am | Part 2 progress is going smoothly.
+- Added cart menu, history, and exit
+- working on adding the search and filtering of products ASAP.
 
-April 15, 2026, Wednesday - 11:57am | Break over!
-- That break took longer than i thought T_T
-- Will start making the user's menu and fixing up the methods' logic.
+May 1, 11:28am | Part 2 progress is still going smoothly, like wow.
+- Added the search and filtering or products.
+- IMMEDIATELY Working on removing and updating items from the cart.
+- my hands are shaking, why did i do this to myself ToT
 
-April 16, 2026, Thursday - 1:11am | Angel Number motivation! :D
-- I've been hard at work on this shopping cart activity all day, im very tired, but i'll get this done!
-- I've officially added the logic for the actual shopping cart.
-- Once the user buys something, the stock will be updated.
-- Error messages will pop up once the user types an invalid number.
-- Added comments around the code so the code's explanations are clear.
-- Menu now officially works.
+May 1, 11:55am | HOLY IM DONE ToT
+- Added removing and updating items
+- made sure of quality assurance
+- im done!!
+- changing READ.ME file to add use of AI description riiiiiight now!
 
-- Will add the while loop logic for the user.
-- Will add the total price logic and the discount logic.
+AI USAGE DESCRIPTION: 
+I'll be completely honest, i used a LOT of AI in this project. The AI was, again, used as a guiding hand for me to go through the project. To say that it "didnt help that much" would be a diservice and an understatement. Im thankful that such a resource was made available for students like me, especially because I am not much of a coder.
 
-April 16, 2026, Thursday - 4:44am | The Angel Number strikes again!
-- I finally did it, i completed the code ToT
-- after rechecking with the requirements, my code has succesfully followed the requirements to a T.
-- Will add the flowchart and upload the code soon.
-
-April 16, 2026, Thursday - 5:49am | Finally done.
-- Added flow chart
-- Double checked completed code to the requirements
-- Added AI usage report.
-- Hopefully i pass <3 Goodnight.
-
-AI Usage Report: C# Shopping Cart 
-AI Tool Used: Gemini
-Primary Use Case: Debugging Assistance, Syntax Troubleshooting, and Conceptual Reinforcement
-
-During the development of this shopping cart console application, I utilized AI strictly as an interactive debugger and "rubber duck" to help me talk through my logic. I wrote the core object-oriented structures, the mathematical formulas, and the foundational game-loop myself.
-
-I consulted the AI for guidance on the following specific roadblocks:
-
-Array Indexing Logic: I used the AI to help me conceptualize why my user input ID needed a - 1 offset to correctly match the 0-indexed shopMenu array.
-
-Volatile Memory & Object Updates: I asked the AI for clarification on how C# handles RAM versus persistent storage to ensure I was updating the remainingStock of my Product class correctly without accidentally creating new objects.
-
-Loop Control & Scope: I used the AI to troubleshoot an infinite loop trap I accidentally created, which helped me understand exactly where to place my break; condition and checkout math outside of the while (true) loop.
-
-Conclusion:
-The AI did not write the final implementation or the logic for this project. Instead, it guided me toward the source of my syntax errors and logic traps, allowing me to manually fix the code, test it, and deepen my actual understanding of C# mechanics.
-
-(Accidentally uploaded the Part 2 file here, my bad, will delete it now. Writing here for commit history purposes :P)
+In conclusion: AI was used in this project mostly to be my guiding hand and someone to ask when im completely stuck on a part of the project.
