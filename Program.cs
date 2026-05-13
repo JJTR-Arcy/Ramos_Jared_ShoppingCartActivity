@@ -1,13 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Xml.Schema;
-
-namespace Sanbox_for_Shopping_Cart_Activity_Parts_1_and_2
+﻿namespace ShoppingCartActivity_Pt._3_Encapsulation
 {
     internal class Program
     {
-        // Hello :3 This is Jared Ramos from BSIT 1-2 (irreg) here. I've decided to completely nuke my old code and rework it with the receieved comments and criticisms in mind, hopefully I've done a good job :)
-        // Side note: Very very sorry that I submitted my repository's link inside of 1-1's google sheet! Complete accident T_T 
-        // By the time that I had realized, the google sheet was already locked! Completely my fault, it wont happen again <3
         static void Main(string[] args)
         {
             #region - Array of items in stock.
@@ -19,39 +13,39 @@ namespace Sanbox_for_Shopping_Cart_Activity_Parts_1_and_2
             int receiptNumber = 1;
 
             storeInventory[0] = new Product();
-            storeInventory[0].id = 1;
-            storeInventory[0].name = "Instant Noodles";
-            storeInventory[0].price = 15.50;
+            storeInventory[0].Id = 1;
+            storeInventory[0].Name = "Instant Noodles";
+            storeInventory[0].Price = 15.50;
             storeInventory[0].remainingStock = 100;
-            storeInventory[0].category = "Food";
+            storeInventory[0].Category = "Food";
 
             storeInventory[1] = new Product();
-            storeInventory[1].id = 2;
-            storeInventory[1].name = "Safeguard White Soap";
-            storeInventory[1].price = 50;
+            storeInventory[1].Id = 2;
+            storeInventory[1].Name = "Safeguard White Soap";
+            storeInventory[1].Price = 50;
             storeInventory[1].remainingStock = 120;
-            storeInventory[1].category = "Cleaning Products";
+            storeInventory[1].Category = "Cleaning Products";
 
             storeInventory[2] = new Product();
-            storeInventory[2].id = 3;
-            storeInventory[2].name = "Canned Corned Beef";
-            storeInventory[2].price = 60;
+            storeInventory[2].Id = 3;
+            storeInventory[2].Name = "Canned Corned Beef";
+            storeInventory[2].Price = 60;
             storeInventory[2].remainingStock = 70;
-            storeInventory[2].category = "Food";
+            storeInventory[2].Category = "Food";
 
             storeInventory[3] = new Product();
-            storeInventory[3].id = 4;
-            storeInventory[3].name = "Cotton Balls";
-            storeInventory[3].price = 80;
+            storeInventory[3].Id = 4;
+            storeInventory[3].Name = "Cotton Balls";
+            storeInventory[3].Price = 80;
             storeInventory[3].remainingStock = 90;
-            storeInventory[3].category = "Cleaning Product";
+            storeInventory[3].Category = "Cleaning Product";
 
             storeInventory[4] = new Product();
-            storeInventory[4].id = 5;
-            storeInventory[4].name = "Face Cleanser";
-            storeInventory[4].price = 120;
+            storeInventory[4].Id = 5;
+            storeInventory[4].Name = "Face Cleanser";
+            storeInventory[4].Price = 120;
             storeInventory[4].remainingStock = 60;
-            storeInventory[4].category = "Cleaning Product";
+            storeInventory[4].Category = "Cleaning Product";
 
             #endregion
 
@@ -80,18 +74,18 @@ namespace Sanbox_for_Shopping_Cart_Activity_Parts_1_and_2
                         string shopOption = Console.ReadLine();
 
                         string searchQuery = "";
-                        string categoryQuery = "";
+                        string CategoryQuery = "";
 
                         if (shopOption == "2")
                         {
-                            Console.Write("Enter product name to search: ");
+                            Console.Write("Enter product Name to search: ");
                             searchQuery = Console.ReadLine().ToLower();
                         }
                         else if (shopOption == "3")
                         {
                             Console.WriteLine("Categories: Food, Cleaning Product");
-                            Console.Write("Enter category: ");
-                            categoryQuery = Console.ReadLine().ToLower();
+                            Console.Write("Enter Category: ");
+                            CategoryQuery = Console.ReadLine().ToLower();
                         }
 
                         Console.WriteLine("\n[STORE INVENTORY]");
@@ -103,8 +97,8 @@ namespace Sanbox_for_Shopping_Cart_Activity_Parts_1_and_2
                             bool isMatch = false;
 
                             if (shopOption == "1") isMatch = true; // Show all
-                            else if (shopOption == "2" && storeInventory[i].name.ToLower().Contains(searchQuery)) isMatch = true;
-                            else if (shopOption == "3" && storeInventory[i].category.ToLower() == categoryQuery) isMatch = true;
+                            else if (shopOption == "2" && storeInventory[i].Name.ToLower().Contains(searchQuery)) isMatch = true;
+                            else if (shopOption == "3" && storeInventory[i].Category.ToLower() == CategoryQuery) isMatch = true;
 
                             if (isMatch)
                             {
@@ -122,19 +116,19 @@ namespace Sanbox_for_Shopping_Cart_Activity_Parts_1_and_2
 
                         // 3. Continue to purchase...
                         Console.WriteLine("\nWhich item number would you like to buy? (Enter the ID): ");
-                        string idInput = Console.ReadLine();
+                        string IdInput = Console.ReadLine();
 
-                        // (YOUR TRYPARSE CODE STAYS EXACTLY THE SAME BELOW THIS LINE!)
-                        if (int.TryParse(idInput, out int selectedId))
+                        
+                        if (int.TryParse(IdInput, out int selectedId))
                         {
-                          
+
                             int arrayIndex = selectedId - 1;
 
-                            
+
                             if (arrayIndex >= 0 && arrayIndex < storeInventory.Length)
                             {
-                                
-                                Console.WriteLine($"You selected ID: {selectedId}, {storeInventory[arrayIndex].name}");
+
+                                Console.WriteLine($"You selected ID: {selectedId}, {storeInventory[arrayIndex].Name}");
                                 Console.WriteLine("Excellent choice! How many would you like to buy?");
                                 string quantityInput = Console.ReadLine();
 
@@ -142,36 +136,36 @@ namespace Sanbox_for_Shopping_Cart_Activity_Parts_1_and_2
                                 {
                                     if (quantity <= 0 || quantity > storeInventory[arrayIndex].remainingStock)
                                     {
-                                        Console.WriteLine("ERROR: Quantity requested either too high or too low. Please reconsider");
+                                        Console.WriteLine("ERROR: Quantity requested either too high or too low. Please reconsIder");
                                     }
 
                                     else
                                     {
                                         storeInventory[arrayIndex].DeductStock(quantity);
-                                        Console.WriteLine($"Success! Added {quantity} of {storeInventory[arrayIndex].name} to your cart.");
+                                        Console.WriteLine($"Success! Added {quantity} of {storeInventory[arrayIndex].Name} to your cart.");
 
-                                   
-                                        double itemTotal = storeInventory[arrayIndex].price * quantity;
 
-                                    
+                                        double itemTotal = storeInventory[arrayIndex].Price * quantity;
+
+
                                         CartItem newItem = new CartItem();
-                                        newItem.name = storeInventory[arrayIndex].name;
-                                        newItem.price = storeInventory[arrayIndex].price;
-                                        newItem.quantityBought = quantity;
-                                        newItem.subtotal = itemTotal;
+                                        newItem.Name = storeInventory[arrayIndex].Name;
+                                        newItem.Price = storeInventory[arrayIndex].Price;
+                                        newItem.QuantityBought = quantity;
+                                        newItem.Subtotal = itemTotal;
 
                                         bool itemFoundInCart = false;
 
                                         for (int i = 0; i < cartItemCount; i++)
                                         {
-                                            if (shoppingCart[i].name == newItem.name)
+                                            if (shoppingCart[i].Name == newItem.Name)
                                             {
 
-                                                shoppingCart[i].quantityBought += quantity;
-                                                shoppingCart[i].subtotal += itemTotal;
+                                                shoppingCart[i].QuantityBought += quantity;
+                                                shoppingCart[i].Subtotal += itemTotal;
 
-                                                Console.WriteLine($"\nSuccess! Updated {newItem.name} in your cart.");
-                                                Console.WriteLine($"New Quantity: {shoppingCart[i].quantityBought} | New Subtotal: Php {shoppingCart[i].subtotal}");
+                                                Console.WriteLine($"\nSuccess! Updated {newItem.Name} in your cart.");
+                                                Console.WriteLine($"New Quantity: {shoppingCart[i].QuantityBought} | New Subtotal: Php {shoppingCart[i].Subtotal}");
 
                                                 itemFoundInCart = true;
                                                 break;
@@ -184,7 +178,7 @@ namespace Sanbox_for_Shopping_Cart_Activity_Parts_1_and_2
                                             {
                                                 shoppingCart[cartItemCount] = newItem;
                                                 cartItemCount++;
-                                                Console.WriteLine($"\nSuccess! Added {quantity}x {newItem.name} to your cart. Subtotal: Php {newItem.subtotal}");
+                                                Console.WriteLine($"\nSuccess! Added {quantity}x {newItem.Name} to your cart. Subtotal: Php {newItem.Subtotal}");
                                             }
 
                                             else
@@ -193,25 +187,25 @@ namespace Sanbox_for_Shopping_Cart_Activity_Parts_1_and_2
                                             }
                                         }
 
-                                        Console.WriteLine($"\nSuccess! {quantity}x {newItem.name} added. Subtotal: Php {newItem.subtotal}");
+                                        Console.WriteLine($"\nSuccess! {quantity}x {newItem.Name} added. Subtotal: Php {newItem.Subtotal}");
                                     }
                                 }
 
                                 else
                                 {
-                                    Console.WriteLine("Invalid input! Please enter a real number for the quantity.");
+                                    Console.WriteLine("InvalId input! Please enter a real number for the quantity.");
                                 }
                             }
-                              
-                            
-                            else if (arrayIndex <= 0 ||  arrayIndex >= storeInventory.Length)
+
+
+                            else if (arrayIndex <= 0 || arrayIndex >= storeInventory.Length)
                             {
-                                Console.WriteLine("Invalid ID! That item does not exist on our shelves.");
+                                Console.WriteLine("InvalId ID! That item does not exist on our shelves.");
                             }
                         }
                         else
                         {
-                            Console.WriteLine("Invalid input! Please enter a real number.");
+                            Console.WriteLine("InvalId input! Please enter a real number.");
                         }
 
                         break;
@@ -239,7 +233,7 @@ namespace Sanbox_for_Shopping_Cart_Activity_Parts_1_and_2
                                 {
                                     for (int i = 0; i < cartItemCount; i++)
                                     {
-                                        Console.WriteLine($"[{i + 1}] {shoppingCart[i].quantityBought}x {shoppingCart[i].name} - Php {shoppingCart[i].subtotal}");
+                                        Console.WriteLine($"[{i + 1}] {shoppingCart[i].QuantityBought}x {shoppingCart[i].Name} - Php {shoppingCart[i].Subtotal}");
                                     }
                                 }
                             }
@@ -256,9 +250,9 @@ namespace Sanbox_for_Shopping_Cart_Activity_Parts_1_and_2
                                         // 1. REFUND THE STOCK TO THE SHELF (why would u do that :[)
                                         for (int s = 0; s < storeInventory.Length; s++)
                                         {
-                                            if (storeInventory[s].name == shoppingCart[realIdx].name)
+                                            if (storeInventory[s].Name == shoppingCart[realIdx].Name)
                                             {
-                                                storeInventory[s].remainingStock += shoppingCart[realIdx].quantityBought;
+                                                storeInventory[s].remainingStock += shoppingCart[realIdx].QuantityBought;
                                                 break;
                                             }
                                         }
@@ -271,7 +265,7 @@ namespace Sanbox_for_Shopping_Cart_Activity_Parts_1_and_2
                                         cartItemCount--;
                                         Console.WriteLine("Item removed and stock refunded to shelves.");
                                     }
-                                    else Console.WriteLine("Invalid item number.");
+                                    else Console.WriteLine("InvalId item number.");
                                 }
                             }
                             else if (cartChoice == "3") // UPDATE QUANTITY :P
@@ -283,16 +277,16 @@ namespace Sanbox_for_Shopping_Cart_Activity_Parts_1_and_2
                                     if (int.TryParse(Console.ReadLine(), out int updateIdx) && updateIdx > 0 && updateIdx <= cartItemCount)
                                     {
                                         int realIdx = updateIdx - 1;
-                                        Console.Write($"Enter new quantity for {shoppingCart[realIdx].name}: ");
+                                        Console.Write($"Enter new quantity for {shoppingCart[realIdx].Name}: ");
                                         if (int.TryParse(Console.ReadLine(), out int newQty) && newQty > 0)
                                         {
-                                            int diff = newQty - shoppingCart[realIdx].quantityBought;
+                                            int diff = newQty - shoppingCart[realIdx].QuantityBought;
                                             bool canUpdate = true;
 
                                             // ADJUST STOCK ON SHELVES :D
                                             for (int s = 0; s < storeInventory.Length; s++)
                                             {
-                                                if (storeInventory[s].name == shoppingCart[realIdx].name)
+                                                if (storeInventory[s].Name == shoppingCart[realIdx].Name)
                                                 {
                                                     if (diff > 0 && storeInventory[s].remainingStock < diff)
                                                     {
@@ -309,14 +303,14 @@ namespace Sanbox_for_Shopping_Cart_Activity_Parts_1_and_2
 
                                             if (canUpdate)
                                             {
-                                                shoppingCart[realIdx].quantityBought = newQty;
-                                                shoppingCart[realIdx].subtotal = shoppingCart[realIdx].price * newQty;
+                                                shoppingCart[realIdx].QuantityBought = newQty;
+                                                shoppingCart[realIdx].Subtotal = shoppingCart[realIdx].Price * newQty;
                                                 Console.WriteLine("Quantity successfully updated!");
                                             }
                                         }
-                                        else Console.WriteLine("Invalid quantity.");
+                                        else Console.WriteLine("InvalId quantity.");
                                     }
-                                    else Console.WriteLine("Invalid item number.");
+                                    else Console.WriteLine("InvalId item number.");
                                 }
                             }
                             else if (cartChoice == "4") // CLEAR CART >:0
@@ -326,9 +320,9 @@ namespace Sanbox_for_Shopping_Cart_Activity_Parts_1_and_2
                                 {
                                     for (int s = 0; s < storeInventory.Length; s++)
                                     {
-                                        if (storeInventory[s].name == shoppingCart[c].name)
+                                        if (storeInventory[s].Name == shoppingCart[c].Name)
                                         {
-                                            storeInventory[s].remainingStock += shoppingCart[c].quantityBought;
+                                            storeInventory[s].remainingStock += shoppingCart[c].QuantityBought;
                                         }
                                     }
                                 }
@@ -350,8 +344,8 @@ namespace Sanbox_for_Shopping_Cart_Activity_Parts_1_and_2
                                 double grandTotal = 0;
                                 for (int i = 0; i < cartItemCount; i++)
                                 {
-                                    Console.WriteLine($"{shoppingCart[i].quantityBought}x {shoppingCart[i].name} - Php {shoppingCart[i].subtotal}");
-                                    grandTotal += shoppingCart[i].subtotal;
+                                    Console.WriteLine($"{shoppingCart[i].QuantityBought}x {shoppingCart[i].Name} - Php {shoppingCart[i].Subtotal}");
+                                    grandTotal += shoppingCart[i].Subtotal;
                                 }
 
                                 double finalTotal = grandTotal;
@@ -365,7 +359,7 @@ namespace Sanbox_for_Shopping_Cart_Activity_Parts_1_and_2
                                 Console.WriteLine("--------------------------------------");
                                 Console.WriteLine($"FINAL TOTAL TO PAY: Php {finalTotal}");
 
-                                // Payment Validation Loop X_X
+                                // Payment ValIdation Loop X_X
                                 double paymentAmount = 0;
                                 while (true)
                                 {
@@ -375,9 +369,9 @@ namespace Sanbox_for_Shopping_Cart_Activity_Parts_1_and_2
                                     if (double.TryParse(payInput, out paymentAmount))
                                     {
                                         if (paymentAmount >= finalTotal) break;
-                                        else Console.WriteLine("Insufficient payment. Please enter a valid amount.");
+                                        else Console.WriteLine("Insufficient payment. Please enter a valId amount.");
                                     }
-                                    else Console.WriteLine("Invalid input. Please enter numbers only.");
+                                    else Console.WriteLine("InvalId input. Please enter numbers only.");
                                 }
 
                                 double change = paymentAmount - finalTotal;
@@ -386,7 +380,7 @@ namespace Sanbox_for_Shopping_Cart_Activity_Parts_1_and_2
                                 Console.WriteLine("\n========== TRANSACTION COMPLETE ==========");
                                 Console.WriteLine($"Receipt No: {receiptNumber:D4}");
                                 Console.WriteLine($"Date: {currentDate}");
-                                Console.WriteLine($"Amount Paid: Php {paymentAmount}");
+                                Console.WriteLine($"Amount PaId: Php {paymentAmount}");
                                 Console.WriteLine($"Change: Php {change}");
 
                                 // Save to Order History :P
@@ -404,7 +398,7 @@ namespace Sanbox_for_Shopping_Cart_Activity_Parts_1_and_2
                                 {
                                     if (storeInventory[i].remainingStock <= 5)
                                     {
-                                        Console.WriteLine($"ALERT: {storeInventory[i].name} has only {storeInventory[i].remainingStock} stocks left!");
+                                        Console.WriteLine($"ALERT: {storeInventory[i].Name} has only {storeInventory[i].remainingStock} stocks left!");
                                         hasLowStock = true;
                                     }
                                 }
@@ -421,7 +415,7 @@ namespace Sanbox_for_Shopping_Cart_Activity_Parts_1_and_2
                             }
                             else
                             {
-                                Console.WriteLine("\nInvalid option. Please try again.");
+                                Console.WriteLine("\nInvalId option. Please try again.");
                             }
                         }
                         break;
@@ -448,9 +442,6 @@ namespace Sanbox_for_Shopping_Cart_Activity_Parts_1_and_2
                 }
                 #endregion
             }
-
-
-         
         }
     }
 
@@ -458,17 +449,29 @@ namespace Sanbox_for_Shopping_Cart_Activity_Parts_1_and_2
 
     public class Product
     {
-        public int id;
-        public string name;
-        public double price;
-        public int remainingStock;
-        public string category;
+        public int Id { get; set; }
+        public string Name { get; set;  }
+        public double Price { get; set; }
+        public string Category { get; set; }
 
-        
+        private int _remainingStock;
+        public int remainingStock
+        {
+            get { return _remainingStock; }
+            set
+            {
+                if (value >= 0)
+                {
+                    _remainingStock = value;
+                }
+            }
+        }
+
+
 
         public void DisplayProduct()
         {
-            Console.WriteLine($"[{id}] {name} {category} - Php {price} (Stock: {remainingStock})");
+            Console.WriteLine($"[{Id}] {Name} {Category} - Php {Price} (Stock: {remainingStock})");
         }
 
         public void DeductStock(int amountToBuy)
@@ -476,15 +479,17 @@ namespace Sanbox_for_Shopping_Cart_Activity_Parts_1_and_2
             remainingStock -= amountToBuy;
         }
     }
-              
-        
-    
+
+
+
 
     public class CartItem
     {
-        public string name;
-        public double price;
-        public int quantityBought;
-        public double subtotal;
+        public string Name { get; set; }
+        public double Price { get; set; }
+        public int QuantityBought { get; set; }
+        public double Subtotal { get; set; }
     }
+
+
 }
