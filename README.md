@@ -16,3 +16,8 @@ May 13, 2026 | GAH DAYUM, here we go again with cramming T_T
 - Watching tutorials on Encapsulation, Polymorphism, and Inheritance.
 - Copy and Pasted previous branch code onto a new slate.
 - I can do this >:]
+
+May 13, 2026 - 10:09 | HOLY TIME SKIP!
+- Went through another class and ate outside for a while. The last entry was around.. 3-4pm?
+- Finally finished studying getters and setters! Will officially start coding right now.
+- I can do this ^^
