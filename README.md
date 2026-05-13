@@ -21,3 +21,10 @@ May 13, 2026 - 10:09 | HOLY TIME SKIP!
 - Went through another class and ate outside for a while. The last entry was around.. 3-4pm?
 - Finally finished studying getters and setters! Will officially start coding right now.
 - I can do this ^^
+
+May 14, 2026 - 12:53 am | Knowledge is Power!
+- AIs like Gemini are SAVIOURS!
+- It helped me a LOT in understanding getters and setters more and more.
+- Its answers to my questions are always really in depth and understandable for a beginner coder like me to understand.
+- Writing the code with this new knowledge makes me more confident!
+- I can do this :D
