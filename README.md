@@ -28,3 +28,11 @@ May 14, 2026 - 12:53 am | Knowledge is Power!
 - Its answers to my questions are always really in depth and understandable for a beginner coder like me to understand.
 - Writing the code with this new knowledge makes me more confident!
 - I can do this :D
+
+May 14, 2026 - 3:01 am | dayum.
+- Code is finally done <3
+- I'll be honest, mental health is in shambles rn, which is why i took so long to do this ToT
+- But i finally did it <3
+- ___________________
+- Added getters and setters to the classes and code.
+- Inputted correct capitalisation to the stuff (like .id turns into .Id)
